@@ -43,7 +43,7 @@ window.addEventListener('load', function () {
         let t = Date.parse(endtime) - Date.parse(new Date())
         seconds = Math.floor((t / 1000) % 60)
         minutes = Math.floor((t / 1000 / 60) % 60)
-        hours = Math.floor((t / (1000 * 60 * 60)) )
+        hours = Math.floor((t / (1000 * 60 * 60)))
 
         return {
             'total': t,
@@ -81,21 +81,37 @@ window.addEventListener('load', function () {
 
     let more = document.querySelector('.more'),
         overlay = document.querySelector('.overlay'),
-        close = document.querySelector('.popup-close');
+        close = document.querySelector('.popup-close'),
+        description_btn = document.querySelectorAll('.description-btn');
+    console.log(description_btn[1])
+
+   
+   
 
 
-        more.addEventListener('click', function(){
-            this.classList.add('more-splash')
+    more.addEventListener('click', function () {
+        this.classList.add('more-splash')
+        overlay.style.display = 'block'
+        document.body.style.overflow = 'hidden'
+    })
+
+    close.addEventListener('click', function () {
+        overlay.style.display = 'none'
+        more.classList.remove('more-splash')
+        document.body.style.overflow = ''
+    })
+
+    console.log(description_btn.length)
+
+    for (let i = 0; i < description_btn.length; i++) {
+        description_btn[i].addEventListener('click', function () {
             overlay.style.display = 'block'
             document.body.style.overflow = 'hidden'
         })
+    }
 
-        close.addEventListener('click', function(){
-            overlay.style.display = 'none'
-            more.classList.remove('more-splash')
-            document.body.style.overflow = ''
-        })
+    
 
 
- 
+
 })
