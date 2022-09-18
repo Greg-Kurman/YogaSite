@@ -223,4 +223,31 @@ window.addEventListener('load', function () {
         }
     })
 
+    // calculator
+
+    let peoples = document.querySelectorAll('.counter-block-input')[0],
+        days = document.querySelectorAll('.counter-block-input')[1],
+        base = document.getElementById('select'),
+        total = document.getElementById('total');
+
+            console.log(peoples.value)
+
+        peoples.addEventListener('change', function(){
+            total.value = peoples.value*base.value*days.value*3500
+            total.innerText = Math.floor(total.value)
+        })
+
+        days.addEventListener('change', function(){
+            total.value = peoples.value*base.value*days.value*3500
+            total.innerText = Math.floor(total.value)
+        })
+
+        base.addEventListener('change', function(){
+            total.value = peoples.value*base.value*days.value*3500
+            total.innerText = Math.floor(total.value)
+        })
+
+        
+         
+
 })
