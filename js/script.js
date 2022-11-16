@@ -37,7 +37,7 @@ window.addEventListener('load', function () {
 
     //Timer
 
-    let deadline = '2022-10-18'
+    let deadline = new Date(Date.parse(new Date()) + 0.3 * 24 * 60 * 60 * 1000);
 
     function getTimeRemaining(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date())
